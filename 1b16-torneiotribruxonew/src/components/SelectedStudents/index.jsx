@@ -9,11 +9,12 @@ const SelectedStudents = ({get3, charList}) => {
     }
 
     return(
-        <div className='big-container'>
+        <div className='big-container' key={Math.random()}>
             
-            {charList.map((item) => {return (
-               
-                <div className='container-principal' key={item.id}>
+                {charList.map((item) => {return (
+                
+                <div className='container-principal' key={Math.random()}>
+                    
                     <div className='container-img'>
                         <img src={item.image} alt={item.name} />
                     </div>
@@ -30,7 +31,9 @@ const SelectedStudents = ({get3, charList}) => {
 
             )})}
             
-            <button className='button-start' onClick={() => (get3(), changeName(), audio.play())} >{name}</button>
+            
+            
+            <button className='button-start' onClick={() => (get3(), changeName())} >{name}</button>
         </div>
     )
 }

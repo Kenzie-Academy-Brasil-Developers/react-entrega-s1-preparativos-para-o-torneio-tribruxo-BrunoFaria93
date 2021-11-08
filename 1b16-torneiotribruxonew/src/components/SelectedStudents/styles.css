@@ -79,4 +79,12 @@ div{
         margin: 0 auto;
         margin-top: 10px;
     }
+
+    .container-texto{
+        height: 80px;
+        width: 190px;
+    }
+    .button-start{
+        padding: 8px 16px;
+    }
   }

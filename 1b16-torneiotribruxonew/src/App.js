@@ -17,23 +17,19 @@ function App() {
   function get3 () {
       const newArr = []
       const filteredArr = allCharList.filter((item) =>{return item.image !== ''})
+      const houses = []
       let position = 0
-      let condition = false
-      
-      while(!condition){
-        position = Math.ceil(Math.random() * 10)
-        if(!newArr.includes(filteredArr[position])){
-          newArr.push(filteredArr[position])
-          if(newArr.length === 3){
-            condition = true
-          }
-        }
-
+  
+      // student.house !== houses[count]
+      while(newArr.length < 3){
+        const leftStudents = [...filteredArr.filter((student) => houses.every((house) => house !== student.house))]
         
-      }
-        
+        position = Math.floor(Math.random() * leftStudents.length)
+          
+          newArr.push(leftStudents[position])
+          houses.push(leftStudents[position].house)
 
-      
+      } 
       setCharList(newArr)
   }
   
